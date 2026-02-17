@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Solutions - Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .hero-section {
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: move 20s linear infinite;
+        }
+        
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn-custom {
+            background: var(--secondary-gradient);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        .pricing-card {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+        }
+        
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-lightning-charge-fill text-primary"></i> TechSolutions
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Precios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-custom btn-sm" href="#contact">Comenzar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Transformamos Ideas en Soluciones Digitales</h1>
+                    <p class="lead mb-4">Desarrollo de software empresarial, sistemas de gestión y soluciones tecnológicas a medida.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-light btn-lg px-4">Solicitar Demo</a>
+                        <a href="#services" class="btn btn-outline-light btn-lg px-4">Ver Servicios</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <i class="bi bi-code-slash display-1"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 stat-card">
+                    <div class="stat-number">150+</div>
+                    <p class="mb-0">Proyectos Completados</p>
+                </div>
+                <div class="col-md-3 stat-card">
+                    <div class="stat-number">50+</div>
+                    <p class="mb-0">Clientes Satisfechos</p>
+                </div>
+                <div class="col-md-3 stat-card">
+                    <div class="stat-number">99%</div>
+                    <p class="mb-0">Uptime Garantizado</p>
+                </div>
+                <div class="col-md-3 stat-card">
+                    <div class="stat-number">24/7</div>
+                    <p class="mb-0">Soporte Técnico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Nuestros Servicios</h2>
+                <p class="text-muted">Soluciones completas para tu negocio</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Desarrollo Web</h4>
+                        <p class="text-muted text-center">Aplicaciones web modernas y escalables con las últimas tecnologías.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Frontend Responsivo</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Backend Robusto</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> APIs RESTful</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-database"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Sistemas de Gestión</h4>
+                        <p class="text-muted text-center">Plataformas empresariales personalizadas para optimizar procesos.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> ERP Personalizado</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> CRM Integrado</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Reportería Avanzada</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Soporte Técnico</h4>
+                        <p class="text-muted text-center">Mantenimiento y actualizaciones continuas de tus sistemas.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Monitoreo 24/7</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Actualizaciones</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Backup Automático</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">¿Por Qué Elegirnos?</h2>
+                <p class="text-muted">Características que nos hacen diferentes</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="bi bi-rocket-takeoff fs-2 text-primary"></i>
+                        </div>
+                        <h5>Desarrollo Ágil</h5>
+                        <p class="text-muted small">Entregas rápidas con metodologías modernas</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="bi bi-shield-check fs-2 text-success"></i>
+                        </div>
+                        <h5>Seguridad</h5>
+                        <p class="text-muted small">Protección de datos y cumplimiento normativo</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="bi bi-graph-up-arrow fs-2 text-warning"></i>
+                        </div>
+                        <h5>Escalabilidad</h5>
+                        <p class="text-muted small">Crece sin límites con infraestructura flexible</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+                            <i class="bi bi-headset fs-2 text-danger"></i>
+                        </div>
+                        <h5>Soporte</h5>
+                        <p class="text-muted small">Atención personalizada cuando la necesites</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Planes y Precios</h2>
+                <p class="text-muted">Elige el plan que mejor se adapte a tus necesidades</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card pricing-card shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h5 class="card-title text-center mb-4">Básico</h5>
+                            <div class="text-center mb-4">
+                                <span class="display-4 fw-bold">$499</span>
+                                <span class="text-muted">/mes</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Hosting incluido</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> 5 páginas web</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Diseño responsivo</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Soporte por email</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 mt-4">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing-card featured shadow-lg h-100 border-primary">
+                        <div class="card-header bg-primary text-white text-center">
+                            <span class="badge bg-light text-primary">Recomendado</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title text-center mb-4">Profesional</h5>
+                            <div class="text-center mb-4">
+                                <span class="display-4 fw-bold">$999</span>
+                                <span class="text-muted">/mes</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Todo lo del plan Básico</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Páginas ilimitadas</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Base de datos MySQL</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Panel de administración</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Soporte prioritario</li>
+                            </ul>
+                            <button class="btn btn-primary w-100 mt-4">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing-card shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h5 class="card-title text-center mb-4">Empresarial</h5>
+                            <div class="text-center mb-4">
+                                <span class="display-4 fw-bold">Custom</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Todo lo del plan Pro</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Desarrollo personalizado</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Integración de APIs</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Infraestructura dedicada</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> Soporte 24/7</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 mt-4">Contactar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">¿Listo para comenzar?</h2>
+                    <p class="lead text-muted mb-4">Contáctanos y descubre cómo podemos ayudarte a transformar tu negocio.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 me-3">
+                            <i class="bi bi-envelope fs-4 text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Email</h6>
+                            <p class="text-muted mb-0">contacto@techsolutions.com</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-success bg-opacity-10 rounded-circle p-3 me-3">
+                            <i class="bi bi-telephone fs-4 text-success"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Teléfono</h6>
+                            <p class="text-muted mb-0">+52 (667) 774-5218</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-4">
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" placeholder="Tu nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="tu@email.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Servicio</label>
+                                    <select class="form-select">
+                                        <option>Desarrollo Web</option>
+                                        <option>Sistema de Gestión</option>
+                                        <option>Soporte Técnico</option>
+                                        <option>Consultoría</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mensaje</label>
+                                    <textarea class="form-control" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-custom w-100">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-lightning-charge-fill"></i> TechSolutions
+                    </h5>
+                    <p class="text-muted">Transformando ideas en soluciones digitales desde 2024.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Servicios</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Desarrollo Web</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Sistemas ERP</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Consultoría</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold mb-3">Empresa</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Nosotros</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Portafolio</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-muted small">Recibe las últimas novedades y tips tecnológicos.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Tu email">
+                        <button class="btn btn-custom">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2024 TechSolutions. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
